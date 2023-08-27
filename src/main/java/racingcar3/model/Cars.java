@@ -14,4 +14,8 @@ public final class Cars {
         this.cars = cars;
     }
 
+    public ArrayList<Car> getCars() {
+        return cars;
+    }
+
 }

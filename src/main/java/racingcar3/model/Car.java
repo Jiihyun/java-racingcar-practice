@@ -14,7 +14,11 @@ public class Car {
         return name;
     }
 
-    public int addPosition(RandomNumberGenerator randomNumberGenerator) {
+    public int getPosition() {
+        return position;
+    }
+
+    public int incrementPosition(RandomNumberGenerator randomNumberGenerator) {
         if (randomNumberGenerator.generate() >= 4) {
             position++;
         }
