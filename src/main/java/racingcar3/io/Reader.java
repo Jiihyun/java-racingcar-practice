@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 public class Reader {
     public List<String> readNames() {
-         return Arrays.stream(Console.readLine().split("")).collect(Collectors.toList());
+         return Arrays.stream(Console.readLine().split(",")).collect(Collectors.toList());
     }
 
     public int readTryTimes() {

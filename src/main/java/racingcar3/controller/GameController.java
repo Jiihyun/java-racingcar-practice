@@ -20,13 +20,13 @@ public class GameController { //요청, 요청 검증, 아래 계층에 처리 �
     }
 
     public void start() {
-        printer.printNames();
+        printer.printInputNamesMsg();
         reader.readNames();
-        printer.printTryTimes();
+        printer.printTryTimesMsg();
         reader.readTryTimes();
 //        gameview.결과들출력()
-        printer.printWinner();
+        printer.printGameResultMsg();
         //서비스 호출
-//        carService.qmffgf()
+        printer.printWinnerMsg();
     }
 }
