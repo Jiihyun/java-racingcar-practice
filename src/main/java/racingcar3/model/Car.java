@@ -1,4 +1,4 @@
-package racingcar3;
+package racingcar3.model;
 
 public class Car {
     private final String name;
