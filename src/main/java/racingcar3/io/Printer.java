@@ -16,7 +16,7 @@ public class Printer {
     }
 
     public void printWinnerMsg() {
-        //최종 우승자 : 다음에 carname 들어와야 하므로 개행x?
+        //최종 우승자 : 다음에 carname 들어와야 하므로 개행x
         System.out.print(MessageConst.WINNER_MSG);
     }
 }

@@ -1,5 +1,6 @@
 package racingcar3.model;
 
+import racingcar3.util.MessageConst;
 import racingcar3.util.RandomNumberGenerator;
 
 public class Car {
@@ -7,7 +8,15 @@ public class Car {
     private int position = 0;
 
     public Car(String name) {
+        validateNameLength(name);
         this.name = name;
+    }
+
+    private static void validateNameLength(String name) {
+        if (name.length() > 5) {
+            System.out.println(MessageConst.NAME_LENGTH_EXCEPTION_MSG);
+            throw new IllegalArgumentException();
+        }
     }
 
     public String getName() {
