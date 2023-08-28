@@ -8,7 +8,10 @@ public class DashGenerator {
     }
 
     public String positionToDash() {
-        StringBuilder stringBuilder = new StringBuilder();
-        return stringBuilder.append(position).toString();
+        StringBuilder moving = new StringBuilder();
+        for (int i = 0; i < position; i++) {
+            moving.append("-");
+        }
+        return moving.toString();
     }
 }

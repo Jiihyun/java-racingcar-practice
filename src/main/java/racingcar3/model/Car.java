@@ -24,4 +24,8 @@ public class Car {
         }
         return position;
     }
+
+    public void moveCar() {
+        incrementPosition(new RandomNumberGenerator());
+    }
 }
