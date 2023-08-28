@@ -18,4 +18,16 @@ public final class Cars {
         return cars;
     }
 
+    public int getMaxPosition() {
+        int maxPosition = 0;
+        for (Car car : cars) {
+            int position = car.getPosition();
+            if (position > maxPosition) {
+                maxPosition = position;
+            }
+        }
+        return maxPosition;
+    }
+
+
 }
