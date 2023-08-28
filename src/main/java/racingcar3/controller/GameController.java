@@ -1,6 +1,5 @@
 package racingcar3.controller;
 
-import racingcar3.inputValidation.InputValidation;
 import racingcar3.io.Printer;
 import racingcar3.io.Reader;
 import racingcar3.model.Cars;
@@ -12,13 +11,11 @@ public class GameController { //요청, 요청 검증, 아래 계층에 처리 �
     private final Reader reader;
     private final Printer printer;
     private final Gameview gameView;
-    private final InputValidation inputValidation;
 
-    public GameController(Reader reader, Printer printer, Gameview gameView, InputValidation inputValidation) {
+    public GameController(Reader reader, Printer printer, Gameview gameView) {
         this.reader = reader;
         this.printer = printer;
         this.gameView = gameView;
-        this.inputValidation = inputValidation;
     }
 
     public void start() {
@@ -35,7 +32,7 @@ public class GameController { //요청, 요청 검증, 아래 계층에 처리 �
         try {
             printer.printInputNamesMsg();
             List<String> carNames = reader.readNames();
-            cars = inputValidation.validateInputName(carNames);
+            cars = new Cars(carNames);
         } catch (Exception e) {
             inputNames();
         }
@@ -45,7 +42,6 @@ public class GameController { //요청, 요청 검증, 아래 계층에 처리 �
     public int inputTryTimes() {
         printer.printTryTimesMsg();
         //imp - try catch 예외 처리 해주기
-        int tryTimes = reader.readTryTimes();
-        return tryTimes;
+        return reader.readTryTimes();
     }
 }

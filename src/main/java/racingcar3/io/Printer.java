@@ -12,6 +12,7 @@ public class Printer {
     }
 
     public void printGameResultMsg() {
+        System.out.println();
         System.out.println(MessageConst.GAME_RESULT_MSG);
     }
 
