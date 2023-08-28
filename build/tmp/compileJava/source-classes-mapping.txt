@@ -35,14 +35,14 @@ racingcar2/Reader.java
  racingcar2.Reader
 racingcar2/GameView.java
  racingcar2.GameView
-racingcar3/view/Gameview.java
- racingcar3.view.Gameview
 racingcar3/model/Car.java
  racingcar3.model.Car
-racingcar3/model/Cars.java
- racingcar3.model.Cars
 racingcar3/Application.java
  racingcar3.Application
+racingcar3/model/Cars.java
+ racingcar3.model.Cars
+racingcar3/view/Gameview.java
+ racingcar3.view.Gameview
 racingcar3/controller/GameController.java
  racingcar3.controller.GameController
 racingcar3/inputValidation/InputValidation.java

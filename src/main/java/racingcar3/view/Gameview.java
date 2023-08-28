@@ -8,7 +8,7 @@ import racingcar3.util.DashGenerator;
 import java.util.ArrayList;
 
 public class Gameview {
-    public void render(int tryTimes, Cars cars) {
+    public void renderResult(int tryTimes, Cars cars) {
         ArrayList<Car> carsList = cars.getCars();
         for (int i = 0; i < tryTimes; i++) {
             for (Car car : carsList) {
@@ -18,6 +18,11 @@ public class Gameview {
             }
             System.out.println();
         }
+    }
+
+    public void renderWinner(Cars cars) {
+        String nameList = String.join(",", cars.getWinnerList());
+        System.out.println(nameList);
     }
 
 }

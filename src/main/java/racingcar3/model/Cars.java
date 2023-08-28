@@ -29,5 +29,14 @@ public final class Cars {
         return maxPosition;
     }
 
-
+    public ArrayList<String> getWinnerList() {
+        ArrayList<String> winnerList = new ArrayList<>();
+        int maxPosition = getMaxPosition();
+        for (Car car : cars) {
+            if (car.getPosition() == maxPosition) {
+                winnerList.add(car.getName());
+            }
+        }
+        return winnerList;
+    }
 }

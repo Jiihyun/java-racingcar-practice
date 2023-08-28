@@ -25,9 +25,9 @@ public class GameController { //요청, 요청 검증, 아래 계층에 처리 �
         Cars cars = inputNames();
         int tryTimes = inputTryTimes();
         printer.printGameResultMsg();
-        gameView.render(tryTimes, cars);
+        gameView.renderResult(tryTimes, cars);
         printer.printWinnerMsg();
-
+        gameView.renderWinner(cars);
     }
 
     public Cars inputNames() {
