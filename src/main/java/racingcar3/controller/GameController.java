@@ -33,23 +33,25 @@ public class GameController { //요청, 요청 검증, 아래 계층에 처리 �
     }
 
     public Cars inputNames() {
-        try {
-            printer.printInputNamesMsg();
-            List<String> carNames = reader.readNames();
-            return new Cars(carNames);
-        } catch (Exception e) {
-            throw new IllegalArgumentException();
+        while (true) {
+            try {
+                printer.printInputNamesMsg();
+                List<String> carNames = reader.readNames();
+                return new Cars(carNames);
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
         }
     }
 
     public int inputTryTimes() {
-        try {
-            printer.printTryTimesMsg();
-            return reader.readTryTimes();
-        } catch (Exception e) {
-            System.out.println(MessageConst.INPUT_TRYTIMES_EXCEPTION_MSG);
-            throw new IllegalArgumentException();
+        while (true) {
+            try {
+                printer.printTryTimesMsg();
+                return reader.readTryTimes();
+            } catch (IllegalArgumentException e) {
+                System.out.println(MessageConst.INPUT_TRYTIMES_EXCEPTION_MSG);
+            }
         }
-
     }
 }

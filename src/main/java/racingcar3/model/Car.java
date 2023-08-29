@@ -18,8 +18,7 @@ public class Car {
     //imp - 객체 생성 전에 메소드를 사용 해야 하므로 static으로 선언
     private static void validateNameLength(String name) {
         if (name == null || name.isEmpty() || name.length() > 5) {
-            System.out.println(MessageConst.NAME_LENGTH_EXCEPTION_MSG);
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException(MessageConst.NAME_LENGTH_EXCEPTION_MSG);
         }
     }
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="racingcar.ApplicationTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-08-29T13:50:56" hostname="jihyunMac.local" time="0.826">
+<testsuite name="racingcar.ApplicationTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-08-29T14:48:25" hostname="jihyunMac.local" time="0.683">
   <properties/>
-  <testcase name="이름에_대한_예외_처리()" classname="racingcar.ApplicationTest" time="0.059"/>
-  <testcase name="전진_정지()" classname="racingcar.ApplicationTest" time="0.766"/>
+  <testcase name="이름에_대한_예외_처리()" classname="racingcar.ApplicationTest" time="0.067"/>
+  <testcase name="전진_정지()" classname="racingcar.ApplicationTest" time="0.615"/>
   <system-out><![CDATA[경주 할 자동차 이름(이름은 쉼표(,) 기준으로 구분)
 
 [ERROR]: 이름은 5자 이하만 가능합니다.

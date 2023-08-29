@@ -20,8 +20,7 @@ public final class Cars {
 
     private static void validateCarNameDuplicated(List<String> carNameStringList) {
         if (carNameStringList.stream().distinct().count() != carNameStringList.size()) {
-            System.out.println(MessageConst.NAME_DUPLICATE_EXCEPTION_MSG);
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException(MessageConst.NAME_DUPLICATE_EXCEPTION_MSG);
         }
     }
 
