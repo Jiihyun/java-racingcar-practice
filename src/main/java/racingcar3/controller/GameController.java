@@ -4,6 +4,7 @@ import racingcar3.io.Printer;
 import racingcar3.io.Reader;
 import racingcar3.model.Cars;
 import racingcar3.service.CarService;
+import racingcar3.util.MessageConst;
 import racingcar3.view.Gameview;
 
 import java.util.List;
@@ -32,20 +33,23 @@ public class GameController { //요청, 요청 검증, 아래 계층에 처리 �
     }
 
     public Cars inputNames() {
-        Cars cars = null;
         try {
             printer.printInputNamesMsg();
             List<String> carNames = reader.readNames();
-            cars = new Cars(carNames);
+            return new Cars(carNames);
         } catch (Exception e) {
-            inputNames();
+            throw new IllegalArgumentException();
         }
-        return cars;
     }
 
     public int inputTryTimes() {
-        printer.printTryTimesMsg();
-        //imp - try catch 예외 처리 해주기
-        return reader.readTryTimes();
+        try {
+            printer.printTryTimesMsg();
+            return reader.readTryTimes();
+        } catch (Exception e) {
+            System.out.println(MessageConst.INPUT_TRYTIMES_EXCEPTION_MSG);
+            throw new IllegalArgumentException();
+        }
+
     }
 }

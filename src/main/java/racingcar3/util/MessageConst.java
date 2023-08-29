@@ -7,4 +7,5 @@ public class MessageConst {
     public static final String WINNER_MSG = "최종 우승자 : ";
     public static final String NAME_LENGTH_EXCEPTION_MSG = "[ERROR] - 이름은 5글자 이하로 입력하셔야 합니다.";
     public static final String NAME_DUPLICATE_EXCEPTION_MSG = "[ERROR] - 중복된 이름입니다.";
+    public static final String INPUT_TRYTIMES_EXCEPTION_MSG = "[ERROR] - 시도 횟수는 숫자여야 한다.";
 }
