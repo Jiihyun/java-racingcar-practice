@@ -1,12 +1,10 @@
 package racingcar2;
 
-import racingcar2.Car;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public final class Cars { //일급 컬렉션 / 캡슐화 / adt(추상데이터타입)
-    // String list는 스트링밖에 없으므로 Cars 리스트를 만들어줘서 name이랑 position가져올 수 있게함
+    // String list는 스트링밖에 없으므로  Car 타입 Cars 리스트를 만들어줘서 name이랑 position가져올 수 있게함
     // 이 때 cars를 map으로 만들면 자동완성x & 그로인한 오타 안 잡아주므로 비추
     private final List<racingcar2.Car> cars;
 

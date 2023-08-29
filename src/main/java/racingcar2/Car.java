@@ -18,11 +18,10 @@ public class Car {
         }
     }
 
-    public int moveChance() {
-        if (Randoms.pickNumberInRange(1, 9) < 4) {
-            return position;
+    public void moveChance() {
+        if (Randoms.pickNumberInRange(1, 9) >= 4) {
+            position++;
         }
-        return position++;
     }
 
     public String carMove() {

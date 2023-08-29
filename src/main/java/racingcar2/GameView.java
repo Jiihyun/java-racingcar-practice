@@ -7,14 +7,12 @@ public class GameView {
         for (int trial = 0; trial < tryTimes; trial++) {
             for (int i = 0; i < cars.getCarList().size(); i++) {
                 Car car = cars.getCarList().get(i);
-                car.moveChance();
-                String move = car.carMove(); //이 부분이 데이터 처리해주는 거라 잘못됨
-                System.out.println(car.getName()+ " : " + move);
+                car.moveChance(); //이 부분이 데이터 처리해주는 거라 잘못됨
+                String move = car.carMove();
+                System.out.println(car.getName() + " : " + move);
             }
             System.out.println();
         }
         System.out.println("최종 우승자 : " + cars.getWinner());
     }
-
-
 }
