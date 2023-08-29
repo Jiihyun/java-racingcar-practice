@@ -27,11 +27,15 @@ public class Car {
         return name;
     }
 
-    public int getPosition() {
+    public int getLastPosition() {
         if (positionHistory.isEmpty()) {
             return 0;
         }
         return positionHistory.get(getLastIndex());
+    }
+
+    public int getPosition(int index) {
+        return positionHistory.get(index);
     }
 
     private int getLastIndex() {
@@ -40,12 +44,17 @@ public class Car {
 
 
     public void moveCar(RandomNumberGenerator randomNumberGenerator) {
-        int increasePosition = getPosition();
+        int increasePosition = getLastPosition();
         if (canMove(randomNumberGenerator)) {
-            positionHistory.add(++increasePosition);
-            return;
+            increasePosition++;
         }
-        positionHistory.add(getPosition());
+        positionHistory.add(increasePosition);
+
+//        if (canMove(randomNumberGenerator)) {
+//            positionHistory.add(++increasePosition);
+//            return;
+//        }
+//        positionHistory.add(getPosition());
     }
 
     public boolean canMove(RandomNumberGenerator randomNumberGenerator) {

@@ -3,31 +3,24 @@ package racingcar3.view;
 
 import racingcar3.model.Car;
 import racingcar3.model.Cars;
-import racingcar3.util.DashGenerator;
-import racingcar3.util.RandomNumberGenerator;
+import racingcar3.util.StringUtils;
 
 import java.util.ArrayList;
 
 public class Gameview {
-    private final RandomNumberGenerator randomNumberGenerator;
 
-    public Gameview(RandomNumberGenerator randomNumberGenerator) {
-        this.randomNumberGenerator = randomNumberGenerator;
-    }
 
     public void renderResult(int tryTimes, Cars cars) {
+        ArrayList<Car> carList = cars.getCars();
         for (int i = 0; i < tryTimes; i++) {
-            cars.moveCars(randomNumberGenerator);
-            ArrayList<Car> carList = cars.getCars();
-            renderEachPersonResult(carList);
+            renderEachPersonResult(carList, i);
             System.out.println();
         }
     }
 
-    public void renderEachPersonResult(ArrayList<Car> carList) {
+    public void renderEachPersonResult(ArrayList<Car> carList, int index) {
         for (Car car : carList) {
-            DashGenerator dashGenerator = new DashGenerator(car.getPosition()); //imp - 이것도 매번 생성되지 않게 생성자로 넣어주는 게 나은가?
-            System.out.println(car.getName() + " : " + dashGenerator.positionToDash());
+            System.out.println(car.getName() + " : " + StringUtils.positionToDash(car.getPosition(index))); //imp - 이것도 매번 생성되지 않게 생성자로 넣어주는 게 나은가? x static활용
         }
     }
 
@@ -37,3 +30,9 @@ public class Gameview {
     }
 
 }
+
+/* imp
+선언 뿐만 아니라 미리 초기화까지 해주는 List
+List.of(1,2,3) - java9 부터
+Arrays.asList(1,2,3) - java 1.8에서는 List.of 대신 이거로
+ */

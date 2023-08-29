@@ -30,30 +30,33 @@ public final class Cars {
     }
 
     public int getMaxPosition() {
-        int maxPosition = 0;
+        int maxLastPosition = 0;
         for (Car car : cars) {
-            int position = car.getPosition();
-            if (position > maxPosition) {
-                maxPosition = position;
-            }
+            maxLastPosition = Math.max(car.getLastPosition(), maxLastPosition);
+//            int position = car.getPosition();
+//            if (position > maxPosition) {
+//                maxPosition = position;
+//            }
         }
-        return maxPosition;
+        return maxLastPosition;
     }
 
     public ArrayList<String> getWinnerList() {
         ArrayList<String> winnerList = new ArrayList<>();
         int maxPosition = getMaxPosition();
         for (Car car : cars) {
-            if (car.getPosition() == maxPosition) {
+            if (car.getLastPosition() == maxPosition) {
                 winnerList.add(car.getName());
             }
         }
         return winnerList;
     }
 
-    public void moveCars(RandomNumberGenerator randomNumberGenerator) {
-        for (Car car : cars) {
-            car.moveCar(randomNumberGenerator);
+    public void moveCars(int tryTimes, RandomNumberGenerator randomNumberGenerator) {
+        for (int i = 0; i < tryTimes; i++) {
+            for (Car car : cars) {
+                car.moveCar(randomNumberGenerator);
+            }
         }
     }
 
