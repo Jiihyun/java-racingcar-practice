@@ -2,7 +2,6 @@ package racingcar;
 
 import camp.nextstep.edu.missionutils.test.NsTest;
 import org.junit.jupiter.api.Test;
-//import racingcar3.Application
 
 import static camp.nextstep.edu.missionutils.test.Assertions.assertRandomNumberInRangeTest;
 import static camp.nextstep.edu.missionutils.test.Assertions.assertSimpleTest;
@@ -17,21 +16,22 @@ class ApplicationTest extends NsTest {
     @Test
     void 전진_정지() {
         assertRandomNumberInRangeTest(
-            () -> {
-                run("pobi,woni", "1");
-                assertThat(output()).contains("pobi : -", "woni : ", "최종 우승자 : pobi");
-            },
-            MOVING_FORWARD, STOP
+                () -> {
+                    run("pobi,woni", "1"); // standard input에서 받아옴
+                    assertThat(output()).contains("pobi : -", "woni : ", "최종 우승자 : pobi"); // output == standard output: 콘솔
+                    //imp - 즉 standard error가 아닌 standard output(콘솔)에 출력을 해주어야 함
+                },
+                MOVING_FORWARD, STOP
         );
     }
 
     @Test
     void 이름에_대한_예외_처리() {
         assertSimpleTest(
-            () -> {
-                runException("pobi,javaji");
-                assertThat(output()).contains(ERROR_MESSAGE);
-            }
+                () -> {
+                    runException("pobi,javaji");
+                    assertThat(output()).contains(ERROR_MESSAGE);
+                }
         );
     }
 
