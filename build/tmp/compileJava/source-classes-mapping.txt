@@ -43,8 +43,8 @@ racingcar/Application.java
  racingcar.Application$Result
 racingcar2/Application.java
  racingcar2.Application
-racingcar5/domain/Cars.java
- racingcar5.domain.Cars
+racingcar5/Application.java
+ racingcar5.Application
 racingcar3/model/Cars.java
  racingcar3.model.Cars
 racingcar4/utils/RandomNumberGenerator.java
@@ -83,7 +83,7 @@ racingcar3/io/Reader.java
  racingcar3.io.Reader
 racingcar4/utils/StringUtils.java
  racingcar4.utils.StringUtils
+racingcar5/domain/Cars.java
+ racingcar5.domain.Cars
 racingcar5/controller/GameController.java
  racingcar5.controller.GameController
-racingcar5/Application.java
- racingcar5.Application
