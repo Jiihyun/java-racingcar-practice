@@ -1,7 +1,7 @@
 racingcar4/utils/NumberConsts.java
  racingcar4.utils.NumberConsts
-racingcar4/utils/MessageConsts.java
- racingcar4.utils.MessageConsts
+racingcar5/util/NumberConst.java
+ racingcar5.util.NumberConst
 racingcar4/Application.java
  racingcar4.Application
 racingcar3/io/Printer.java
@@ -43,8 +43,8 @@ racingcar/Application.java
  racingcar.Application$Result
 racingcar2/Application.java
  racingcar2.Application
-racingcar5/domain/Cars.java
- racingcar5.domain.Cars
+racingcar4/utils/MessageConsts.java
+ racingcar4.utils.MessageConsts
 racingcar3/model/Cars.java
  racingcar3.model.Cars
 racingcar4/utils/RandomNumberGenerator.java
@@ -71,8 +71,8 @@ racingcar4/io/Reader.java
  racingcar4.io.Reader
 racingcar5/view/OutputView.java
  racingcar5.view.OutputView
-racingcar5/util/NumberConst.java
- racingcar5.util.NumberConst
+racingcar5/Application.java
+ racingcar5.Application
 racingcar2/GameView.java
  racingcar2.GameView
 racingcar3/controller/GameController.java
@@ -83,7 +83,7 @@ racingcar3/io/Reader.java
  racingcar3.io.Reader
 racingcar4/utils/StringUtils.java
  racingcar4.utils.StringUtils
+racingcar5/domain/Cars.java
+ racingcar5.domain.Cars
 racingcar5/controller/GameController.java
  racingcar5.controller.GameController
-racingcar5/Application.java
- racingcar5.Application

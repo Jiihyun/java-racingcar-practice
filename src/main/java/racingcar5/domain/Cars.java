@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static racingcar5.util.MessaseConst.INPUT_NAME_DUPLICATION_EXCEPTION;
 import static racingcar5.util.MessaseConst.INPUT_NAME_LENGTH_EXCEPTION;
 import static racingcar5.util.NumberConst.NAME_LENGTH_LIMIT;
 
@@ -17,6 +18,7 @@ public class Cars {
         List<Car> cars = new ArrayList<>();
         for (String name : names) {
             validateNameLength(name);
+            validateDuplicatedName(name, cars);
             cars.add(new Car(name));
         }
         this.carList = cars;
@@ -29,6 +31,14 @@ public class Cars {
     private void validateNameLength(String name) {
         if (name.length() > NAME_LENGTH_LIMIT) {
             throw new IllegalArgumentException(INPUT_NAME_LENGTH_EXCEPTION);
+        }
+    }
+
+    private void validateDuplicatedName(String name, List<Car> cars) {
+        for (Car car : cars) {
+            if (car.getName().equals(name)) {
+                throw new IllegalArgumentException(INPUT_NAME_DUPLICATION_EXCEPTION);
+            }
         }
     }
 
