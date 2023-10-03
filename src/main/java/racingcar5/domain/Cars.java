@@ -26,17 +26,16 @@ public class Cars {
         return new Cars(names);
     }
 
-    private static void validateNameLength(String name) {
+    private void validateNameLength(String name) {
         if (name.length() > NAME_LENGTH_LIMIT) {
             throw new IllegalArgumentException(INPUT_NAME_LENGTH_EXCEPTION);
         }
     }
 
-    private static int getMaxPosition(int maxPosition, Car car) {
-        if (car.getPosition() > maxPosition) {
-            maxPosition = car.getPosition();
+    private void addWinnerIfMaxPosition(ArrayList<String> winners, int maxPosition, Map.Entry<String, Integer> car) {
+        if (car.getValue() == maxPosition) {
+            winners.add(car.getKey());
         }
-        return maxPosition;
     }
 
     public String getCarResult(int tryTimes, MovingPositionGenerator movingPositionGenerator) {
@@ -52,18 +51,30 @@ public class Cars {
     }
 
     public String getWinner() {
-        Map<String, Integer> carMap = new HashMap<>();
         ArrayList<String> winners = new ArrayList<>();
-        int maxPosition = 0;
-        for (Car car : carList) {
-            carMap.put(car.getName(), car.getPosition());
-            maxPosition = getMaxPosition(maxPosition, car);
-        }
+        Map<String, Integer> carMap = updateCarMap();
+        int maxPosition = getMaxPosition(carMap);
         for (Map.Entry<String, Integer> car : carMap.entrySet()) {
-            if (car.getValue() == maxPosition) {
-                winners.add(car.getKey());
-            }
+            addWinnerIfMaxPosition(winners, maxPosition, car);
         }
         return String.join(",", winners);
+    }
+
+    private Map<String, Integer> updateCarMap() {
+        Map<String, Integer> carMap = new HashMap<>();
+        for (Car car : carList) {
+            carMap.put(car.getName(), car.getPosition());
+        }
+        return carMap;
+    }
+
+    private int getMaxPosition(Map<String, Integer> carMap) {
+        int maxPosition = 0;
+        for (Integer position : carMap.values()) {
+            if (position > maxPosition) {
+                maxPosition = position;
+            }
+        }
+        return maxPosition;
     }
 }
