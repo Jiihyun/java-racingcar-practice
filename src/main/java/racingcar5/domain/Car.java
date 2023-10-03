@@ -10,11 +10,10 @@ public class Car {
         this.name = name;
     }
 
-    public int movePosition(MovingPositionGenerator movingPositionGenerator) {
+    public void movePosition(MovingPositionGenerator movingPositionGenerator) {
         if (movingPositionGenerator.canMove()) {
             position++;
         }
-        return position;
     }
 
     public String positionToDash() {
