@@ -17,4 +17,9 @@ public class OutputView {
         System.out.println(result);
     }
 
+    public void printWinners(String winners) {
+        System.out.print(GAME_WINNER_MSG);
+        System.out.println(winners);
+    }
+
 }

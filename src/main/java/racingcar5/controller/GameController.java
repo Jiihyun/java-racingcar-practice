@@ -18,13 +18,27 @@ public class GameController {
         this.movingPositionGenerator = movingPositionGenerator;
     }
 
-    public void start() {
-        List<String> names = inputView.inputName();
-        int tryTimes = getTryTimes();
-        Cars cars = Cars.from(names);
-        String carResult = cars.getCarResult(tryTimes, movingPositionGenerator);
-        outputView.printResult(carResult);
+    private static Cars getCars(List<String> names) {
+        try {
+            return Cars.from(names);
+        } catch (IllegalArgumentException e) {
+            throw new IllegalArgumentException(e.getMessage());
+        }
+    }
 
+    public void start() {
+        try {
+            List<String> names = inputView.inputName();
+            int tryTimes = getTryTimes();
+            Cars cars = getCars(names);
+            String carResult = cars.getCarResult(tryTimes, movingPositionGenerator);
+            outputView.printResult(carResult);
+            String winners = cars.getWinner();
+            outputView.printWinners(winners);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+
+        }
     }
 
     private int getTryTimes() {

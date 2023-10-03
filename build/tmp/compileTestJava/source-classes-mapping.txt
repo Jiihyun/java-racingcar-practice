@@ -1,2 +1,4 @@
 racingcar/ApplicationTest.java
  racingcar.ApplicationTest
+racingcar5/ApplicationTest.java
+ racingcar5.ApplicationTest
